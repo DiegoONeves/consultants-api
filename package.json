@@ -1,0 +1,25 @@
+{
+  "name": "consultans-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon bin/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.17.2",
+    "compression": "^1.7.0",
+    "cors": "^2.8.4",
+    "express": "^4.15.4",
+    "method-override": "^2.3.10",
+    "mongoose": "^4.11.9",
+    "mongoose-unique-validator": "^1.0.5",
+    "nodemon": "^1.17.2",
+    "partial-response-express": "^1.0.0",
+    "request-promise": "^4.2.2"
+  }
+}
