@@ -1,8 +1,6 @@
 'use strict';
-const mongoose = require('mongoose');
 const Model = require('../models/consultant'),
     Consultant = Model.Consultant,
-    ObjectId = require('mongoose').Types.ObjectId,
     Repository = require("../repositories/consultant.repository");;
 
 
@@ -12,7 +10,6 @@ exports.getAll = async (req, res) => {
         var project = { "name": 1, "email": 1 };
 
         var consultants = await Repository.get(query, project);
-        console.log(consultants);
         if (consultants)
             res.status(200).json(consultants.map(x => {
                 return {
