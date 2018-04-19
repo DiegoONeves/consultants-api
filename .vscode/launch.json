@@ -8,13 +8,21 @@
             "type": "node",
             "request": "attach",
             "name": "Attach",
+<<<<<<< HEAD
             "port": 9229
+=======
+            "port": 3000
+>>>>>>> 6faaba21bf9003f0c7e15a7bbd64b44a1a726dec
         },
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
+<<<<<<< HEAD
             "program": "${file}"
+=======
+            "program": "${workspaceFolder}\\bin\\server.js"
+>>>>>>> 6faaba21bf9003f0c7e15a7bbd64b44a1a726dec
         }
     ]
 }
