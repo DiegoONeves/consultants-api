@@ -43,11 +43,7 @@ exports.update = async (id, consultant) => {
 }
 
 exports.delete = async (id) => {
-<<<<<<< HEAD
-	await Consultant.findByIdAndRemove(id);
-=======
 	return await Consultant.findByIdAndRemove(id);
->>>>>>> 6faaba21bf9003f0c7e15a7bbd64b44a1a726dec
 }
 
 exports.count = async (query) => {
