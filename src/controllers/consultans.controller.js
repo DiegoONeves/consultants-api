@@ -15,8 +15,7 @@ exports.getAll = async (req, res) => {
         if (req.query.project) {
             let items = req.query.project.split(',');
             for (let item of items) {
-                let arrayProject = item.split('=');
-                project[arrayProject[0]] = parseInt(arrayProject[1]);
+                project[item] = 1;
             }
         }
 
@@ -33,7 +32,6 @@ exports.getAll = async (req, res) => {
                 }
             }
         }
-
         if (req.query.limiters) {
             let items = req.query.limiters.split(',');
             for (let item of items) {
@@ -41,11 +39,6 @@ exports.getAll = async (req, res) => {
                 limiters[arrayLimiters[0]] = parseInt(arrayLimiters[1]);
             }
         }
-
-        console.log(project);
-        console.log(query);
-        console.log(limiters);
-
         var consultants = await Repository.get(query, project, limiters);
 
         let responseServer = {
@@ -56,7 +49,7 @@ exports.getAll = async (req, res) => {
         res.status(200).json(responseServer);
 
     } catch (err) {
-        res.status(500).send("Erro ao tentar obter consultores");
+        res.status(500).send(err);
     }
 }
 

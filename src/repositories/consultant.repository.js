@@ -15,7 +15,7 @@ exports.get = async (query, project, limiters) => {
 	if (!limiters)
 		limiters = {};
 
-	const res = await Consultant.find(query, project, limiters).sort({ 'name': 1 });;
+	const res = await Consultant.find(query, project, limiters).sort({ 'name': 1 });
 	return res;
 }
 
