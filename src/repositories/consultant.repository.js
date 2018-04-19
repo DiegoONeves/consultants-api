@@ -2,7 +2,7 @@
 'use strict';
 const mongoose = require('mongoose');
 const Model = require('../models/consultant'),
-Consultant = Model.Consultant,
+	Consultant = Model.Consultant,
 	ObjectId = require('mongoose').Types.ObjectId;
 
 
@@ -43,7 +43,7 @@ exports.update = async (id, consultant) => {
 }
 
 exports.delete = async (id) => {
-	await Consultant.findOneAndRemove(id);
+	await Consultant.findByIdAndRemove(id);
 }
 
 exports.count = async (query) => {

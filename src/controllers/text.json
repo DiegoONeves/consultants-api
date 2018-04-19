@@ -1,0 +1,67 @@
+{
+    "_id" : ObjectId("5ac375fc1684340e9c63b47f"),
+    "NomeRelatorio" : "ArquivoEmLote",
+    "Processado" : false,
+    "IdUsuario" : LUUID("1b4557e7-b2a0-9044-b0c8-bc31b2ef595b"),
+    "IdEmpresa" : LUUID("6cac52ca-8119-4f4f-90b1-97c9314c8782"),
+    "NomeArquivo" : "ArquivoEmLote13dd880f-d5b5-41d5-bd4a-6f6dd1e8b59a.csv",
+    "Usuario" : "flima@jequiti.com.br",
+    "DataCriacao" : {
+        "DateTime" : ISODate("2018-04-03T12:39:07.395Z"),
+        "Ticks" : NumberLong(636583559473955396)
+    },
+    "InicioProcessamento" : {
+        "DateTime" : ISODate("2018-04-18T21:17:15.382Z"),
+        "Ticks" : NumberLong(636596830353822687)
+    },
+    "FimProcessamento" : null,
+    "DataCompraInicial" : {
+        "DateTime" : ISODate("2018-03-01T03:00:00.000Z"),
+        "Ticks" : NumberLong(636554700000000000)
+    },
+    "DataCompraFinal" : {
+        "DateTime" : ISODate("2018-03-31T03:00:00.000Z"),
+        "Ticks" : NumberLong(636580620000000000)
+    },
+    "DataAnaliseInicial" : null,
+    "DataAnaliseFinal" : null,
+    "TotalDeRegistros" : 25986,
+    "RegistrosProcessados" : 0,
+    "Erros" : [],
+    "Empresas" : [ 
+        LUUID("6cac52ca-8119-4f4f-90b1-97c9314c8782")
+    ],
+    "Tabelas" : [ 
+        "Analise", 
+        "Blacklist", 
+        "Consumidor", 
+        "EnderecoC", 
+        "EnderecoE", 
+        "Produto", 
+        "Regra", 
+        "Status"
+    ],
+    "Status" : [ 
+        5, 
+        7
+    ],
+    "Canais" : [ 
+        9701, 
+        9705, 
+        9728, 
+        9732, 
+        9733, 
+        9696
+    ],
+    "Categorias" : [],
+    "Pausado" : null,
+    "Removido" : null,
+    "IdSimulacao" : null,
+    "TipoSolicitacaoRelatorio" : 1,
+    "CodigoBoaVista" : null,
+    "Sistema" : null,
+    "Faturado" : false,
+    "Assunto" : null,
+    "Analista" : null,
+    "IdMotivo" : null
+}

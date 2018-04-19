@@ -1,9 +1,7 @@
 'use strict';
-const mongoose = require('mongoose');
 const Model = require('../models/consultant'),
     Consultant = Model.Consultant,
-    ObjectId = require('mongoose').Types.ObjectId,
-    Repository = require("../repositories/consultant.repository");;
+    Repository = require("../repositories/consultant.repository");
 
 
 exports.getAll = async (req, res) => {
@@ -12,7 +10,6 @@ exports.getAll = async (req, res) => {
         var project = { "name": 1, "email": 1 };
 
         var consultants = await Repository.get(query, project);
-        console.log(consultants);
         if (consultants)
             res.status(200).json(consultants.map(x => {
                 return {
@@ -50,30 +47,34 @@ exports.getById = async (req, res) => {
 
 exports.create = async (req, res) => {
     try {
-        var consultant = await Repository.create({
+
+        let newConsultant = {
             name: req.body.name,
             email: req.body.email,
             projects: req.body.projects
-        });
+        };
+
+        var consultant = await Repository.create(newConsultant);
 
         res.status(200).json(consultant);
 
     } catch (err) {
-        res.status(500).send("Erro ao criar consultor");
+        res.status(500).send(err);
     }
 }
 
 exports.update = async (req, res) => {
     try {
-        await Repository.update(
-            req.body._id, {
-                name: req.body.name,
-                email: req.body.email,
-                projects: req.body.projects,
-                isActive: req.body.isActive
-            });
 
-        var consultant = await Repository.getById(req.body._id);
+        let consultantToUpdate = {
+            name: req.body.name,
+            email: req.body.email,
+            projects: req.body.projects,
+            isActive: req.body.isActive
+        };
+        await Repository.update(req.params.id, consultantToUpdate);
+
+        var consultant = await Repository.getById(req.params.id);
 
         res.status(200).json({
             _id: consultant._id,
@@ -83,17 +84,18 @@ exports.update = async (req, res) => {
             projects: consultant.projects
         });
     } catch (err) {
-        res.status(500).send("Erro ao atualizar consultor");
+        res.status(500).send(err);
     }
 
 }
 
 exports.delete = async (req, res) => {
     try {
+
         await Repository.delete(req.params.id);
-        res.status(200).send("consultor deletado com sucesso!");
+        res.status(200).json("deletado", id);
 
     } catch (err) {
-        res.status(500).send("Erro ao tentar deletar consultor por id");
+        res.status(500).send(err);
     }
 }
