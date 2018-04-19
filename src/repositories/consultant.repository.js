@@ -15,7 +15,7 @@ exports.get = async (query, project, limiters) => {
 	if (!limiters)
 		limiters = {};
 
-	const res = await Consultant.find(query, project, limiters);
+	const res = await Consultant.find(query, project, limiters).sort({ 'name': 1 });;
 	return res;
 }
 
@@ -43,7 +43,7 @@ exports.update = async (id, consultant) => {
 }
 
 exports.delete = async (id) => {
-	await Consultant.findOneAndRemove(id);
+	return await Consultant.findByIdAndRemove(id);
 }
 
 exports.count = async (query) => {
