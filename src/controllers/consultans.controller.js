@@ -39,6 +39,7 @@ exports.getAll = async (req, res) => {
                 limiters[arrayLimiters[0]] = parseInt(arrayLimiters[1]);
             }
         }
+        console.log(query);
         var consultants = await Repository.get(query, project, limiters);
 
         let responseServer = {
