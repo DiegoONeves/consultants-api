@@ -1,11 +1,9 @@
 const cors = require('cors'),
     bodyParser = require('body-parser'),
-    errorHandler = require('./errorHandler'),
     compress = require('compression');
 
 
 module.exports = (app) => {
-    app.use(errorHandler);
 
     app.use(compress());
 
