@@ -2,15 +2,6 @@ var express = require('express');
 var app = express();
 
 
-app.get('/', function (req, res) {
-
-});
-
-app.post('/', function (req, res) {
-
-});
-
-
-app.listen(3001, function () {
-
+app.listen(3000, function () {
+    console.log('Aplicação rodando na porta 3001');
 })

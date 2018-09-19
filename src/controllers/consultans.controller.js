@@ -1,12 +1,16 @@
 'use strict';
 const Model = require('../models/consultant'),
     Consultant = Model.Consultant,
-    Repository = require("../repositories/consultant.repository");;
+    Repository = require("../repositories/consultant.repository"),
+    ConsultantService = require('../services/customer.service').ConsultantService;
 
 
 exports.getAll = async (req, res) => {
 
     try {
+
+        var consultantService = new ConsultantService();
+        await consultantService.getConsultantsWithoutProject();
 
         var query = {};
         var project = {};
@@ -124,5 +128,14 @@ exports.delete = async (req, res) => {
 
     } catch (err) {
         res.status(500).send(err);
+    }
+}
+
+exports.getWithoutProjects = async (req, res) => {
+    try {
+        var consultantService = new ConsultantService();
+        await consultantService.getConsultantsWithoutProject();
+    } catch (err) {
+
     }
 }
